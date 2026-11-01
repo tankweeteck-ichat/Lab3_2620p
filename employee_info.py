@@ -28,16 +28,19 @@ def calculate_average_salary():
         total += float(eachDict["salary"])
 
     average = total/numDict
-    print("Average Salary = ", round(average, 2))
+    #print("Average Salary = ", round(average, 2))
     return average
 
 def get_employees_by_dept(department):
     result = []
 
     # Add your implementation from here
-
-
+    for eachDict in employee_data:
+        if (eachDict["department"] == department):
+            result.append(eachDict)
+    #print("Employee in Depart "+ department + ": ", result)
     return result
+
 
 def display_all_records():
     print(("Name" + "\t" +"Age" +"\t" +"Department" +"\t" +"Salary" ).expandtabs(15))
