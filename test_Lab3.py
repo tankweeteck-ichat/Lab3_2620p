@@ -28,3 +28,28 @@ def test_bubble_sort_invalid():
     result = Lab3.bubble_sort(input_arr, 3)
 
     assert (result == [])
+
+
+
+def test_bubble_sort_toolong_list():
+    input_arr = [64, 34, 25, 12, 22, 11, 90, 91, 92, 93]  # 10 items, too long.
+    expected = 1
+    result = Lab3.bubble_sort(input_arr, Lab3.SORT_ASCENDING)
+    assert (result==expected)
+
+
+
+def test_bubble_sort_empty_list():
+    input_arr = []  # Array is empty
+    expected = 0
+    result = Lab3.bubble_sort(input_arr, Lab3.SORT_ASCENDING)
+    assert (result==expected)
+
+
+
+def test_bubble_sort_noninteger_list():
+    input_arr = [64, 34, 25, 12.99, 22, 11, 90]  # One of the items is a float, not integer.
+    expected = 2
+    result = Lab3.bubble_sort(input_arr, Lab3.SORT_ASCENDING)
+    assert (result==expected)
+

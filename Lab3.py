@@ -12,6 +12,27 @@ def bubble_sort(arr, sorting_order):
     # Get number of elements in the list
     n = len(arr_result)
 
+    # ***************************************************************************
+    # Students add the codes below to check n and whether all the items in
+    # the list are integer, before doing any sorting.
+    # ***************************************************************************
+    if n==0: # REQ-04: The list is empty.
+        print("Input array is empty.")
+        return 0
+    if n>=10: # REQ-03: The list has 10 or more items.
+        print("Input array is too long.")
+        return 1
+
+    # Check whether all the items in the list are integer
+    for eachItem in arr_result: 
+        # if any of them is not an integer, then return 2
+        if isinstance(eachItem, int)==False:
+            print("At least one item is not an integer.")
+            return 2
+    # ***************************************************************************
+    # End of codes added by students
+    # ***************************************************************************
+
     if n < 10:
         # Traverse through all array elements
         for i in range(n - 1):
